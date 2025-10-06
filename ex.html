@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zugaran.am</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fdf6f0, #f7e3d3);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: #8d6565;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 100px;
+      margin-right: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .banner {
+      background: #fff3e6;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 18px;
+      color: #5a3e3e;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .banner img {
+      max-width: 120px;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+
+    #map {
+      width: 95%;
+      height: 500px;
+      border: none;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .places {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      background: #e2bbbb;
+      padding: 20px;
+    }
+
+    .places button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .places button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #8d6565;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      margin-top: auto;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    }
+
+    footer a {
+      color: #ffe;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header img {
+        margin-bottom: 10px;
+      }
+
+      .places button {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .banner img {
+        max-width: 80px;
+      }
+    }
+  </style>
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Zugaran Logo">
+    <h1>Zugaran.am</h1>
+  </header>
+
+  <div class="banner">
+    <p><strong>Welcome to Zugaran.am!</strong></p>
+    <p>Did you know? <em>“Zugaran”</em> means <strong>toilet</strong> in Armenian. This site celebrates the places we go — literally!</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/809/809957.png" alt="Toilet Icon">
+  </div>
+
+  <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12144.960000000001!2d44.4991!3d40.1792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sam!4v0000000000000" allowfullscreen></iframe>
+
+  <div class="places">
+    <button onclick="openDirections(40.1925, 44.5152)">Cascade</button>
+    <button onclick="openDirections(40.1836, 44.5126)">Republic Square</button>
+    <button onclick="openDirections(40.1872, 44.5151)">Opera House</button>
+    <button onclick="openDirections(40.1830, 44.5135)">Vernissage</button>
+    <button onclick="openDirections(40.1935, 44.5190)">Matenadaran</button>
+    <button onclick="openDirections(40.1858, 44.4902)">Tsitsernakaberd</button>
+    <button onclick="openDirections(40.2203, 44.5412)">Yerevan Zoo</button>
+    <button onclick="openDirections(40.1910, 44.4980)">Komitas Museum</button>
+    <button onclick="openDirections(40.1798, 44.5075)">Blue Mosque</button>
+    <button onclick="openDirections(40.1530, 44.5045)">Erebuni Fortress</button>
+  </div>
+
+  <script>
+    function openDirections(lat, lng) {
+      const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+      window.open(url, "_blank");
+    }
+  </script>
+
+  <footer>
+    <p><strong>Contact Us</strong></p>
+    <p>Email: <a href="mailto:info@zugaran.am">info@zugaran.am</a></p>
+    <p>Phone: <a href="tel:+37412345678">+374 12 345678</a></p>
+    <p>Address: Yerevan, Armenia</p>
+    <p>&copy; 2025 Zugaran.am. All rights reserved.</p>
+  </footer>
+</body>
+</html>
